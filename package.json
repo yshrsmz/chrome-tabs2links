@@ -1,0 +1,30 @@
+{
+  "name": "chrome-tabs2links",
+  "version": "0.0.1",
+  "description": "Chrome Extension to copy and format links of open tabs",
+  "main": "index.js",
+  "repository": "git@github.com:yshrsmz/chrome-tabs2links.git",
+  "author": "yshrsmz <the.phantom.bane@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.81",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3333",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.9",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.14",
+    "vue": "^2.6.9",
+    "vue-class-component": "^7.0.1",
+    "vue-property-decorator": "^8.0.0",
+    "vuex": "^3.1.0",
+    "vuex-class": "^0.3.1"
+  }
+}
