@@ -16,7 +16,7 @@ let v = new Vue({
     store: store,
     created() {
         const dispatch = this.$store.dispatch;
-        dispatch(ActionTypes.FETCH_TABS)
+        dispatch(ActionTypes.LOAD_INITIAL_DATA);
     },
     render: h => h(App)
 });

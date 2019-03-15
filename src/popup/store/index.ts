@@ -12,18 +12,21 @@ export enum SelectedFormat {
 }
 
 export interface TabInfo {
-    id: String,
-    title: String,
-    url: String,
+    id: String
+    index: Number
+    title: String
+    url: String
 }
 
 export interface State {
-    tabs: TabInfo[],
-    selectedFormat: SelectedFormat,
+    tabs: Map<String, TabInfo>
+    selectedTabIds: String[]
+    selectedFormat: SelectedFormat
 }
 
 const state: State = {
-    tabs: [],
+    tabs: new Map<String, TabInfo>(),
+    selectedTabIds:[],
     selectedFormat: SelectedFormat.MARKDOWN,
 };
 
