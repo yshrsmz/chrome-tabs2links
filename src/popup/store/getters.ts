@@ -15,6 +15,10 @@ const selectedTabs = (state: State): TabInfo[] => {
         .map(id => state.tabs.get(id)!!);
 };
 
+const isAllSelected = (state: State): Boolean => {
+    return state.tabs.size === state.selectedTabIds.length;
+}
+
 const selectedFormat = (state: State): SelectedFormat => {
     return state.selectedFormat;
 };
@@ -33,6 +37,7 @@ export default {
     tabs,
     selectedTabIds,
     selectedTabs,
+    isAllSelected,
     selectedFormat,
     formattedSelectedTabs,
 }

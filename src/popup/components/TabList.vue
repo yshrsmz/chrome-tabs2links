@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form-checkbox @change="onToggleAllChanged">Select/Deselect All</b-form-checkbox>
+    <b-form-checkbox @change="onToggleAllChanged" :checked="isAllSelected">Select/Deselect All</b-form-checkbox>
     <b-list-group>
       <b-list-group-item v-for="tab in tabs" :key="tab.id" class="listItem">
         <b-form-checkbox
@@ -26,7 +26,9 @@ import * as ActionTypees from "../store/ActionTypes";
 export default class TabList extends Vue {
   @Getter("tabs") tabs!: TabInfo[];
 
-  @Getter("selectedTabIds") selectedTabIds!:String[];
+  @Getter("selectedTabIds") selectedTabIds!: String[];
+
+  @Getter("isAllSelected") isAllSelected!: Boolean;
 
   @Action(ActionTypees.SELECT_TAB) selectTab;
 
@@ -36,8 +38,8 @@ export default class TabList extends Vue {
 
   @Action(ActionTypees.DESELECT_ALL_TABS) deselectAllTabs;
 
-  isSelected(tab:TabInfo):Boolean {
-      return this.selectedTabIds.indexOf(tab.id) > -1;
+  isSelected(tab: TabInfo): Boolean {
+    return this.selectedTabIds.indexOf(tab.id) > -1;
   }
 
   onItemChanged(tabId: String, checked: Boolean) {
@@ -50,11 +52,11 @@ export default class TabList extends Vue {
   }
 
   onToggleAllChanged(checked: Boolean) {
-      if (checked) {
-          this.selectAllTabs();
-      } else {
-          this.deselectAllTabs();
-      }
+    if (checked) {
+      this.selectAllTabs();
+    } else {
+      this.deselectAllTabs();
+    }
   }
 }
 </script>
