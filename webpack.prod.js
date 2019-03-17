@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const merge = require("webpack-merge");
 const common = require("./webpack.common");
 
@@ -7,4 +8,9 @@ module.exports = merge(common, {
     optimization: {
         minimize: true,
     },
+    plugins: [
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        })
+    ]
 });
