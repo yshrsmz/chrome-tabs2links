@@ -1,11 +1,11 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const packageJson = require('./package.json');
 
 module.exports = {
-    mode: 'development',
     entry: {
         'js/popup': './src/popup'
     },
@@ -60,8 +60,8 @@ module.exports = {
             }
         ]
     },
-    devtool: 'cheap-module-source-map',
     plugins: [
+        new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: 'manifest.json',
