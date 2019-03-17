@@ -11,6 +11,6 @@ module.exports = merge(common, {
     plugins: [
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        })
+        }),
     ]
 });

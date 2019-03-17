@@ -14,7 +14,7 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['.ts', '.vue', '.js']
+        extensions: ['.ts', '.vue', '.js'],
     },
     optimization: {
         splitChunks: {
@@ -23,23 +23,23 @@ module.exports = {
                     test: /node_modules/,
                     name: 'js/vendor',
                     chunks: 'initial',
-                    enforce: true
-                }
+                    enforce: true,
+                },
             },
-        }
+        },
     },
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
             },
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
                 options: {
-                    appendTsSuffixTo: [/\.vue$/]
-                }
+                    appendTsSuffixTo: [/\.vue$/],
+                },
             },
             {
                 test: /\.scss$/,
@@ -55,10 +55,10 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
-                ]
-            }
-        ]
+                    'css-loader',
+                ],
+            },
+        ],
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -69,12 +69,12 @@ module.exports = {
             inject: false,
             appname: 'Tabs2Links',
             appversion: packageJson.version,
-            appdescription: packageJson.description
+            appdescription: packageJson.description,
         }),
         new HtmlWebpackPlugin({
             filename: 'popup.html',
             template: './src/template/popup.html.ejs',
-            chunks: ['js/popup', 'js/vendor']
-        })
-    ]
+            chunks: ['js/popup', 'js/vendor'],
+        }),
+    ],
 }
