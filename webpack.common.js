@@ -2,7 +2,6 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const packageJson = require('./package.json');
 
@@ -64,7 +63,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
-        new CopyWebpackPlugin(["./assets/*.png"]),
         new HtmlWebpackPlugin({
             filename: 'manifest.json',
             template: './src/template/manifest.json.ejs',
