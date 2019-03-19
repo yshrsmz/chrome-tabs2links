@@ -1,7 +1,8 @@
 {
-    "name": "Tabs2Links",
-    "short_name": "Tabs2Links",
+    "name": "<%= htmlWebpackPlugin.options.appname %>",
+    "short_name": "<%= htmlWebpackPlugin.options.appname %>",
     "version": "<%= htmlWebpackPlugin.options.appversion %>",
+    "version_name": "<%= htmlWebpackPlugin.options.appversion_name %>",
     "description": "<%= htmlWebpackPlugin.options.appdescription %>",
     "icons": {
         "128": "assets/icon_128.png",
@@ -9,7 +10,7 @@
         "16": "assets/icon_16.png"
     },
     "browser_action": {
-        "default_title": "Tabs2Links",
+        "default_title": "<%= htmlWebpackPlugin.options.appname %>",
         "default_popup": "popup.html"
     },
     "permissions": [

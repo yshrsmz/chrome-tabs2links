@@ -3,8 +3,6 @@ const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
-const packageJson = require('./package.json');
-
 module.exports = {
     entry: {
         'js/popup': './src/popup'
@@ -63,14 +61,6 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            filename: 'manifest.json',
-            template: './src/template/manifest.json.ejs',
-            inject: false,
-            appname: 'Tabs2Links',
-            appversion: packageJson.version,
-            appdescription: packageJson.description,
-        }),
         new HtmlWebpackPlugin({
             filename: 'popup.html',
             template: './src/template/popup.html.ejs',

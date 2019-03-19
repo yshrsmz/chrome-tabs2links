@@ -1,6 +1,7 @@
 {
   "name": "chrome-tabs2links",
-  "version": "0.1.2",
+  "version": "0.2.0",
+  "version_name": "0.2.0-SNAPSHOT",
   "description": "Chrome Extension to copy and format links of open tabs",
   "main": "index.js",
   "repository": "git@github.com:yshrsmz/chrome-tabs2links.git",
