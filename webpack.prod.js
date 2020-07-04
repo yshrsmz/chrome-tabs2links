@@ -13,9 +13,11 @@ module.exports = merge(common, {
         minimize: true,
     },
     plugins: [
-        new CopyWebpackPlugin([
-            { from: "./assets/prod/*.png", to: "assets", flatten: true }
-        ]),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "./assets/prod/*.png", to: "assets", flatten: true }
+            ]
+        }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
         }),

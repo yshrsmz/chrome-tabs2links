@@ -9,9 +9,11 @@ module.exports = merge(common, {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     plugins: [
-        new CopyWebpackPlugin([
-            { from: "./assets/dev/*.png", to: "assets", flatten: true }
-        ]),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "./assets/dev/*.png", to: "assets", flatten: true }
+            ]
+        }),
         new HtmlWebpackPlugin({
             filename: 'manifest.json',
             template: './src/template/manifest.json.ejs',
