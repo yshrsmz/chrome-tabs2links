@@ -8,33 +8,35 @@
     <h4>About Developer</h4>
     <p>
       <strong>Developer:&nbsp;</strong>
-      <a :href="config.DEVELOPER_URL" target="_blank">{{ config.DEVELOPER_NAME }}</a>
+      <a :href="config.DEVELOPER_URL" target="_blank">{{
+        config.DEVELOPER_NAME
+      }}</a>
     </p>
     <p>
       <strong>WebSite:&nbsp;</strong>
       <a href="https://www.yslibrary.net" target="_blank">CodingFeline</a>
     </p>
     <p>
-      <font-awesome-icon icon="star"/>
-      <a :href="config.CHROME_WEBSTORE_URL" target="_blank">&nbsp;Rate on Chrome Webstore</a>
+      <font-awesome-icon icon="star" />
+      <a :href="config.CHROME_WEBSTORE_URL" target="_blank"
+        >&nbsp;Rate on Chrome Webstore</a
+      >
     </p>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { Component } from "vue-property-decorator";
-import { Getter, Action } from "vuex-class";
-import { TabInfo } from "@/popup/store";
-import * as ActionTypees from "../store/ActionTypes";
-import Config from "../Config";
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
+import { Getter } from 'vuex-class'
+import Config from '../Config'
 
 @Component({
-  name: "options"
+  name: 'options',
 })
 export default class Options extends Vue {
-  @Getter("formattedSelectedTabs") formattedSelectedTabs!: String;
+  @Getter('formattedSelectedTabs') formattedSelectedTabs!: string
 
-  config = Config;
+  config = Config
 }
 </script>

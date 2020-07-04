@@ -1,3 +1,3 @@
 chrome.runtime.onInstalled.addListener(() => {
-    // chrome.declarativeContent.onPageChanged
+  // chrome.declarativeContent.onPageChanged
 })
